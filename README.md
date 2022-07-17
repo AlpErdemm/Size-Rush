@@ -5,4 +5,5 @@ Player avoids obstacles, collects coins and tries to get bigger by passing throu
 
 Tech: Unity 3D | C#
 
+Gameplay gif below.
 ![](lostPanda2.gif)
