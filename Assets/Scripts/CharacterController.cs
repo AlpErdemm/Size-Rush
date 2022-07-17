@@ -102,7 +102,7 @@ public class CharacterController : MonoBehaviour
             upSound.GetComponent<AudioSource>().Play();
             upArrow.SetActive(true);
             upArrow.transform
-                .DOLocalJump(new Vector3(0f, 1.5f, 0f), 1f, 1, 1f)
+                .DOLocalJump(new Vector3(0f, 1.5f * (1/ (1 + scale * 0.1f)), 0f), 1f, 1, 1f)
                 .OnComplete(() => upArrow.SetActive(false));
         }
         else
@@ -110,10 +110,11 @@ public class CharacterController : MonoBehaviour
             downSound.GetComponent<AudioSource>().Play();
             downArrow.SetActive(true);
             downArrow.transform
-                .DOLocalJump(new Vector3(0f, 1f, 0f), 1f, 1, 1f)
+                .DOLocalJump(new Vector3(0f, 1.5f * (1 / (1 + scale * 0.1f)), 0f), 1f, 1, 1f)
                 .OnComplete(() => downArrow.SetActive(false));
         }
 
+        FindObjectOfType<Cinemachine.CinemachineTransposer>().m_FollowOffset = new Vector3(0f , 6f + scale, -12f - scale);
 
         GetComponent<Animator>().SetFloat("animSpeed", 1.0f / scale);
         transform.localScale = new Vector3(scale, scale, scale);
