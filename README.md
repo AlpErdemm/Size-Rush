@@ -7,4 +7,4 @@ Tech: Unity 3D | C#
 
 Please wait for gameplay gif to load...
 
-![](lostPanda2.gif)
+![](lostPanda3.gif)
